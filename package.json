@@ -1,0 +1,29 @@
+{
+  "name": "com.yourid.arsample",
+  "displayName": "ARProject",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "com.wikitude.phonegap.WikitudePlugin": "/Users/flx/Wikitude_Cordova_Plugin_7-1-0_3-4-2_2017-09-20_19-58-20",
+    "com.wikitude.phonegap.wikitudeplugin": "file:../../Wikitude_Cordova_Plugin_7-1-0_3-4-2_2017-09-20_19-58-20",
+    "cordova-android": "^6.3.0",
+    "cordova-plugin-file": "^5.0.0",
+    "cordova-plugin-whitelist": "^1.3.2"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "com.wikitude.phonegap.WikitudePlugin": {},
+      "cordova-plugin-file": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
