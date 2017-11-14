@@ -37,6 +37,7 @@ var World = {
 			offsetY:-.5
 		});
 
+        /*
         var htmlDrawableClickMe = new AR.HtmlDrawable({uri:"clickme.html"}, 228/429, {
             offsetX : 0,
             offsetY : -0.5,
@@ -46,14 +47,14 @@ var World = {
             verticalAnchor : AR.CONST.VERTICAL_ANCHOR.BOTTOM,
             opacity : 0.9,
 			zOrder: 5
-        });
+        });*/
 
 		/*
 			The last line combines everything by creating an AR.Trackable2DObject with the previously created tracker, the name of the image target and the drawable that should augment the recognized image.
 			Please note that in this case the target name is a wildcard. Wildcards can be used to respond to any target defined in the target collection. If you want to respond to a certain target only for a particular AR.Trackable2DObject simply provide the target name as specified in the target collection.
 		*/
 		this.imgButton = new AR.ImageResource("assets/wwwButton.png");
-		var pageOneButton = this.createWwwButton("www.google.com", 0.1, {
+		var pageOneButton = this.createWwwButton(0.1, {
             translate: {
                 x: -0.25,
                 y: -0.25
@@ -62,7 +63,7 @@ var World = {
 
 		var pageOne = new AR.Trackable2DObject(this.tracker, "*", {
 			drawables: {
-				cam: [htmlDrawableClickMe,pageOneButton]
+				cam: [pageOneButton]
 			},
             onEnterFieldOfVision: function() {
 				console.log("Entered");
@@ -84,7 +85,7 @@ var World = {
 		}, 10000);*/
 	},
 
-	createWwwButton: function createWwwButtonFn(url, size, options) {
+	createWwwButton: function createWwwButtonFn(size, options) {
 
             options.onClick = function() {
                // console.log("BLUE BUTTON CLICKING");
@@ -101,9 +102,10 @@ function closeWikitudePlugin()
     document.location = 'architectsdk://action=closeWikitudePlugin';
 }
 
+/*
 function showNaruto() {
     document.location = 'architectsdk://action=showNaruto';
-}
+}*/
 
 /*
 function ssss(){
