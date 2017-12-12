@@ -32,7 +32,7 @@ buildscript {
     // http://tools.android.com/tech-docs/new-build-system/version-compatibility
     // and https://issues.apache.org/jira/browse/CB-8143
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 
@@ -177,7 +177,7 @@ android {
     }
 
     lintOptions {
-      abortOnError false;
+        abortOnError false;
     }
 
     compileSdkVersion cdvCompileSdkVersion
@@ -186,13 +186,13 @@ android {
     if (Boolean.valueOf(cdvBuildMultipleApks)) {
         productFlavors {
             armv7 {
-                versionCode defaultConfig.versionCode*10 + 2
+                versionCode defaultConfig.versionCode * 10 + 2
                 ndk {
                     abiFilters "armeabi-v7a", ""
                 }
             }
             x86 {
-                versionCode defaultConfig.versionCode*10 + 4
+                versionCode defaultConfig.versionCode * 10 + 4
                 ndk {
                     abiFilters "x86", ""
                 }
@@ -231,14 +231,10 @@ android {
             release {
                 // These must be set or Gradle will complain (even if they are overridden).
                 keyAlias = ""
-                keyPassword = "__unset" // And these must be set to non-empty in order to have the signing step added to the task graph.
+                keyPassword = "__unset"
+                // And these must be set to non-empty in order to have the signing step added to the task graph.
                 storeFile = null
                 storePassword = "__unset"
-            }
-        }
-        buildTypes {
-            release {
-                signingConfig signingConfigs.release
             }
         }
         addSigningProps(cdvReleaseSigningPropertiesFile, signingConfigs.release)
@@ -251,9 +247,17 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
-    debugCompile(project(path: "CordovaLib", configuration: "debug"))
-    releaseCompile(project(path: "CordovaLib", configuration: "release"))
+    compile project(':CordovaLib')
+    //debugCompile(project(path: "CordovaLib", configuration: "debug"))
+    //releaseCompile(project(path: "CordovaLib", configuration: "release"))
     // SUB-PROJECT DEPENDENCIES END
+    compile 'com.google.maps.android:android-maps-utils:0.5+'
+    compile 'com.google.android.gms:play-services-maps:11.6.2'
+    compile 'com.google.android.gms:play-services-places:11.6.2'
+    compile 'com.google.android.gms:play-services-location:11.6.2'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
 }
 
 def promptForReleaseKeyPassword() {

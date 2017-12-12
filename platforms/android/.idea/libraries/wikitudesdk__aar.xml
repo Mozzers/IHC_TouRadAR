@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="wikitudesdk:@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/wikitudesdk/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/wikitudesdk/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wikitudesdk.aar/47ede11f1edc43b03f98ef034d18f5af/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wikitudesdk.aar/47ede11f1edc43b03f98ef034d18f5af/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -28,11 +28,11 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         app.wikitudePlugin = cordova.require("com.wikitude.phonegap.WikitudePlugin.WikitudePlugin");
-                 var launchDemoButton = document.getElementById('launchAR');
+                 //var launchDemoButton = document.getElementById('launchAR');
                 app.wikitudePlugin.setOnUrlInvokeCallback(app.onURLInvoked);
-                 launchDemoButton.onclick = function() {
+                 //launchDemoButton.onclick = function() {*/
                      app.loadARchitectWorld();
-                 }
+                // }
     },
 
     // Update DOM on a Received Event
